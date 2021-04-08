@@ -1,4 +1,5 @@
 ﻿using Eventy.Models;
+using Eventy.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,20 @@ namespace Eventy.Controllers
         public ActionResult Random()
         {
             var material = new Material() { Name = "Pot" };
-            return View(material);
+            var customers = new List<Customer>
+            {
+                new Customer {Name = "shade"},
+                new Customer {Name = "Tiwa"}
+            };
+
+            var viewModel = new RandomMaterialViewModel
+            {
+                Material = material,
+                Customers = customers
+            };
+
+            return View(viewModel);
         }
+
     }
-}
+}   
