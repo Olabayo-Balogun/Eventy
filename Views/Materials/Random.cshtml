@@ -6,5 +6,31 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.Material.Name</h2>
+@*
+    Adding razor syntax conditions
+*@
 
+@{ 
+    var className = Model.Customers.Count > 0 ? "popular" : null;
+} 
+
+<h2 class="@className">@Model.Material.Name</h2>
+@if (Model.Customers.Count == 0)
+        {
+            <p> Nobody has rented this item before</p>
+        }
+
+    else
+    {
+    <ul>
+        @foreach (var customer in Model.Customers)
+        {
+            <li>
+                @customer.Name
+            </li>
+        }
+    </ul>
+    }
+    
+
+ 
