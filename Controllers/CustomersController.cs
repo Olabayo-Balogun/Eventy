@@ -31,8 +31,8 @@ namespace Eventy.Controllers
         {
             return new List<Customer>
             {
-                new Customer { Id = 1, Name = "John Doe" },
-                new Customer { Id = 2, Name = "Mary Jane" }
+                new Customer { FirstName = "John" },
+                new Customer { FirstName = "Mary Jane" }
             };
         }
     }

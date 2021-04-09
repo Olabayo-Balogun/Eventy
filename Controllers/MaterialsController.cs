@@ -18,8 +18,8 @@ namespace Eventy.Controllers
         {
             return new List<Material>
             {
-                new Material { Id = 1, Name = "Pot" },
-                new Material { Id = 2, Name = "Spoon" }
+                new Material { Name = "Pot" },
+                new Material { Name = "Spoon" }
             };
         }
 
@@ -29,8 +29,8 @@ namespace Eventy.Controllers
             var material = new Material() { Name = "Pot" };
             var customers = new List<Customer>
             {
-                new Customer { Name = "Tiwa" },
-                new Customer { Name = "Shade" }
+                new Customer { FirstName = "Tiwa" },
+                new Customer { FirstName = "Shade" }
             };
 
             var viewModel = new RandomMaterialViewModel
