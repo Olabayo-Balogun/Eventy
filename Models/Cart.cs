@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -11,13 +12,10 @@ namespace Eventy.Models
         public DateTime DateOfRental { 
             get 
             { 
-                return DateOfRental; 
-            } 
-            set 
-            { 
-                DateTime now = DateTime.Today; 
+                return DateOfRental.Date; 
             } 
         }
+        [Required]
         public DateTime DateOfReturn { get; set; }
         public int NumberOfRentalDays { 
             get 
@@ -25,16 +23,18 @@ namespace Eventy.Models
                 return (DateOfReturn - DateOfRental).Days; 
             } 
         }
+        public int QuantityRequested { get; set; }
+        public decimal TotalPricePerMaterial
+        {
+            get
+            {
+                return (MaterialPricePerDay * NumberOfRentalDays) * QuantityRequested;
+            }
+        }
         public List<Material> Materials { get; set; }
         public string MaterialName { get; }
         public decimal MaterialPricePerDay { get; }
         public string MaterialImage { get; }
-        public int QuantityRequested { get; set; }
-        public decimal TotalPricePerMaterial 
-        { get 
-            { 
-                return (MaterialPricePerDay * NumberOfRentalDays)* QuantityRequested; 
-            } 
-        }
+        
     }
 }

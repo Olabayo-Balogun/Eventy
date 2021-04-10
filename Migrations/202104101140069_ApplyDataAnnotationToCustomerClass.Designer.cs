@@ -13,7 +13,7 @@ namespace Eventy.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202104101056089_ApplyDataAnnotationToCustomerClass"; }
+            get { return "202104101140069_ApplyDataAnnotationToCustomerClass"; }
         }
         
         string IMigrationMetadata.Source
