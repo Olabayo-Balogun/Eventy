@@ -8,6 +8,8 @@ namespace Eventy.Models
 {
     public class Cart
     {
+        public Customer Customer { get; set; }
+        public int CustomerId { get; set; }
         public int TransactionId { get; private set; }
         public DateTime DateOfRental { 
             get 

@@ -33,7 +33,5 @@ namespace Eventy.Models
         public string Image { get; set; }
         public MembershipType MembershipType { get; set; }
         public byte MembershipTypeId { get; }
-        public Cart Cart { get; }
-        public int CartTransactionId { get; }
     }
 }
