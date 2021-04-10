@@ -206,6 +206,10 @@
     <Compile Include="Migrations\202104101039135_PopulateMembershipType.Designer.cs">
       <DependentUpon>202104101039135_PopulateMembershipType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104101056089_ApplyDataAnnotationToCustomerClass.cs" />
+    <Compile Include="Migrations\202104101056089_ApplyDataAnnotationToCustomerClass.Designer.cs">
+      <DependentUpon>202104101056089_ApplyDataAnnotationToCustomerClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -322,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104101039135_PopulateMembershipType.resx">
       <DependentUpon>202104101039135_PopulateMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104101056089_ApplyDataAnnotationToCustomerClass.resx">
+      <DependentUpon>202104101056089_ApplyDataAnnotationToCustomerClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
