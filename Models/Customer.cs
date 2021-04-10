@@ -16,7 +16,9 @@ namespace Eventy.Models
         [StringLength(50)]
         public string LastName { get; set; }
 
-        public DateTime DateOfBirth { get; set; }
+        public string FullName { get { return FirstName + " " + LastName; } }
+
+        public DateTime DateOfBirth { get ; set; }
 
         public int Age { get { return ((DateTime.Today - DateOfBirth).Days)/365; } }
 
