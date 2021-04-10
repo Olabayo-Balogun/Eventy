@@ -9,15 +9,27 @@
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
-            <th>Material</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Date Added</th>
+            <th>Price per day</th>
+            <th>Available?</th>
+            <th>Quantity</th>
+            <th>Category</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var material in Model)
         {
-            <tr>
-                <td>@material.Name</td>
-            </tr>
+        <tr>
+            <td>@material.Id</td>
+            <td>@material.Name</td>
+            <td>@material.DateAdded</td>
+            <td>₦@material.PricePerDay</td>
+            <td>@material.IsAvailable</td>
+            <td>@material.Quantity</td>
+            <td>@material.Category.Name</td>
+        </tr>
         }
     </tbody>
 </table>

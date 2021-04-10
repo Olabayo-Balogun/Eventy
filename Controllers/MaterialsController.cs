@@ -2,45 +2,39 @@
 using Eventy.ViewModels;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using System.Data.Entity;
+using System.Linq;
 
 namespace Eventy.Controllers
 {
     public class MaterialsController : Controller
     {
+        private ApplicationDbContext _context;
+        public MaterialsController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+        // GET: Customers
         public ViewResult Index()
         {
-            var materials = GetMaterials();
+            var materials = _context.Materials.Include(m => m.Category).ToList();
 
             return View(materials);
         }
 
-        private IEnumerable<Material> GetMaterials()
+        public ActionResult Details(int id)
         {
-            return new List<Material>
-            {
-                new Material { Name = "Pot" },
-                new Material { Name = "Spoon" }
-            };
+            var material = _context.Materials.Include(m => m.Category).SingleOrDefault(c => c.Id == id);
+
+            if (material == null)
+                return HttpNotFound();
+
+            return View(material);
         }
-
-        // GET: Materials/Random
-        public ActionResult Random()
-        {
-            var material = new Material() { Name = "Pot" };
-            var customers = new List<Customer>
-            {
-                new Customer { FirstName = "Tiwa" },
-                new Customer { FirstName = "Shade" }
-            };
-
-            var viewModel = new RandomMaterialViewModel
-            {
-                Material = material,
-                Customers = customers
-            };
-
-            return View(viewModel);
-        }
-
     }
 }   

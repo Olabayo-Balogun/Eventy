@@ -9,9 +9,12 @@ namespace Eventy.Models
     {
         public int Id { get; private set; }
         public string Name { get; set; }
+        public DateTime DateAdded { get; set; }
         public decimal PricePerDay { get; set; }
         public int Quantity { get; set; }
         public string Image { get; set; }
         public byte IsAvailable { get; set; }
+        public Category Category { get; set; }
+        public int CategoryId { get; set; }
     }
 }

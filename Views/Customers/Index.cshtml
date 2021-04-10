@@ -5,6 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <h2>Customers</h2>
 @if (!Model.Any())
 {
@@ -20,6 +21,8 @@ else
                 <th>Email Address</th>
                 <th>Home Address</th>
                 <th>Phone Number</th>
+                <th>Membership Type</th>
+                <th>Discount Rate</th>
             </tr>
         </thead>
         <tbody>
@@ -40,6 +43,12 @@ else
                 </td>
                 <td>
                     @Html.ActionLink(customer.PhoneNumber, "Details", "Customers", new { id = customer.Id }, null)
+                </td>
+                <td>
+                    @customer.MembershipType.Name
+                </td>
+                <td>
+                    @customer.MembershipType.DiscountRate%
                 </td>
             </tr>
 

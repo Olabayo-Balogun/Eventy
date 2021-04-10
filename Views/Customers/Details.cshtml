@@ -16,9 +16,12 @@
             <th>Email Address</th>
             <th>Home Address</th>
             <th>Phone Number</th>
-            <th>Date Of Birth</th>
+            <th>Date of Birth</th>
             <th>Age</th>
-            <th>Is Subscribed To Newsletter?</th>
+            <th>Discount Rate</th>
+            <th>Membership Type</th>
+            <th>Sign Up Fee</th>
+            <th>Duration</th>
         </tr>
     </thead>
     <tbody>
@@ -42,13 +45,22 @@
                 @Model.PhoneNumber
             </td>
             <td>
-                @Model.DateOfBirth
+                @Model.DateOfBirth.ToLongDateString()
             </td>
             <td>
                 @Model.Age
             </td>
             <td>
-                @Model.IsSubscribedToNewsletter
+                @Model.MembershipType.DiscountRate%
+            </td>
+            <td>
+                @Model.MembershipType.Name
+            </td>
+            <td>
+                ₦@Model.MembershipType.SignUpFee
+            </td>
+            <td>
+                @Model.MembershipType.DurationInMonths
             </td>
         </tr>
     </tbody>
