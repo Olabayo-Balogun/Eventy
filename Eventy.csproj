@@ -226,6 +226,14 @@
     <Compile Include="Migrations\202104101721058_CreatingMaterialsTable.Designer.cs">
       <DependentUpon>202104101721058_CreatingMaterialsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104101727351_AdjustedThePropertiesOfTheCategoryTableAndCartItems.cs" />
+    <Compile Include="Migrations\202104101727351_AdjustedThePropertiesOfTheCategoryTableAndCartItems.Designer.cs">
+      <DependentUpon>202104101727351_AdjustedThePropertiesOfTheCategoryTableAndCartItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104101752052_UpdatedIsAvailableDatatype.cs" />
+    <Compile Include="Migrations\202104101752052_UpdatedIsAvailableDatatype.Designer.cs">
+      <DependentUpon>202104101752052_UpdatedIsAvailableDatatype.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CartItem.cs" />
@@ -305,6 +313,7 @@
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Materials\Index.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Materials\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -358,6 +367,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104101721058_CreatingMaterialsTable.resx">
       <DependentUpon>202104101721058_CreatingMaterialsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104101727351_AdjustedThePropertiesOfTheCategoryTableAndCartItems.resx">
+      <DependentUpon>202104101727351_AdjustedThePropertiesOfTheCategoryTableAndCartItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104101752052_UpdatedIsAvailableDatatype.resx">
+      <DependentUpon>202104101752052_UpdatedIsAvailableDatatype.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,43 @@
+﻿@model Eventy.Models.Material
+
+@{
+    ViewBag.Title = "Model.Name";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Name</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Date Added</th>
+            <th>Price Per Day</th>
+            <th>Quantity</th>
+            <th>Is Available?</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Model.Id
+            </td>
+            <td>
+                @Model.Name
+            </td>
+            <td>
+                @Model.DateAdded
+            </td>
+            <td>
+                @Model.PricePerDay
+            </td>
+            <td>
+                @Model.Quantity
+            </td>
+            <td>
+                @Model.IsAvailable
+            </td>
+        </tr>
+    </tbody>
+</table>

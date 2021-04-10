@@ -11,11 +11,6 @@
         <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Date Added</th>
-            <th>Price per day</th>
-            <th>Available?</th>
-            <th>Quantity</th>
-            <th>Category</th>
         </tr>
     </thead>
     <tbody>
@@ -23,12 +18,7 @@
         {
         <tr>
             <td>@material.Id</td>
-            <td>@material.Name</td>
-            <td>@material.DateAdded</td>
-            <td>₦@material.PricePerDay</td>
-            <td>@material.IsAvailable</td>
-            <td>@material.Quantity</td>
-            <td>@material.Category.Name</td>
+            <td>@Html.ActionLink(material.Name, "Details", "Materials", new { id = material.Id }, null)</td>
         </tr>
         }
     </tbody>

@@ -9,7 +9,7 @@ namespace Eventy.Models
     public class CartItem
     {
         [Key]
-        public int TransactionId { get; set; }
+        public int TransactionId { get; private set; }
         public Customer Customer { get; set; }
         public int CustomerId { get; set; }
         public DateTime DateOfRental { 
