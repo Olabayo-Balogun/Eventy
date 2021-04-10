@@ -190,6 +190,22 @@
     <Compile Include="Migrations\202104100944154_AddNewsletterSubscription.Designer.cs">
       <DependentUpon>202104100944154_AddNewsletterSubscription.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104101019244_AddMembershipTypeAndCart.cs" />
+    <Compile Include="Migrations\202104101019244_AddMembershipTypeAndCart.Designer.cs">
+      <DependentUpon>202104101019244_AddMembershipTypeAndCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104101023381_AddCart.cs" />
+    <Compile Include="Migrations\202104101023381_AddCart.Designer.cs">
+      <DependentUpon>202104101023381_AddCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104101038268_FixedMembershipSignUpFee.cs" />
+    <Compile Include="Migrations\202104101038268_FixedMembershipSignUpFee.Designer.cs">
+      <DependentUpon>202104101038268_FixedMembershipSignUpFee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104101039135_PopulateMembershipType.cs" />
+    <Compile Include="Migrations\202104101039135_PopulateMembershipType.Designer.cs">
+      <DependentUpon>202104101039135_PopulateMembershipType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -294,6 +310,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104100944154_AddNewsletterSubscription.resx">
       <DependentUpon>202104100944154_AddNewsletterSubscription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104101019244_AddMembershipTypeAndCart.resx">
+      <DependentUpon>202104101019244_AddMembershipTypeAndCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104101023381_AddCart.resx">
+      <DependentUpon>202104101023381_AddCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104101038268_FixedMembershipSignUpFee.resx">
+      <DependentUpon>202104101038268_FixedMembershipSignUpFee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104101039135_PopulateMembershipType.resx">
+      <DependentUpon>202104101039135_PopulateMembershipType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
