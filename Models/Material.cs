@@ -30,7 +30,12 @@ namespace Eventy.Models
         [Required]
         [Display(Name = "Available?")]
         public bool IsAvailable { get; set; }
+
+        [Required]
+        [Display(Name = "Category")]
         public Category Category { get; set; }
+
+        [Display(Name = "Category")]
         public int CategoryId { get; set; }
     }
 }

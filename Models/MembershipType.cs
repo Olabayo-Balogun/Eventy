@@ -8,10 +8,11 @@ namespace Eventy.Models
 {
     public class MembershipType
     {
-        public byte Id { get; private set; }
+        public int Id { get; private set; }
 
         [Required]
-        [Display(Name = "Name")]
+        [Display(Name = "Membership Type")]
+
         public string Name { get; set; }
 
         [Required]

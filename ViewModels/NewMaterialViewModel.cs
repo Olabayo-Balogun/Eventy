@@ -6,9 +6,9 @@ using System.Web;
 
 namespace Eventy.ViewModels
 {
-    public class NewCustomerViewModel
+    public class NewMaterialViewModel
     {
-        public IEnumerable<MembershipType> MembershipTypes { get; set; }
-        public Customer Cu { get; set; }
+        public IEnumerable<Category> Categories { get; set; }
+        public Material Material { get; set; }
     }
 }

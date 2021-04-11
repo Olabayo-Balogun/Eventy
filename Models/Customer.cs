@@ -56,7 +56,7 @@ namespace Eventy.Models
         [Display(Name = "Membership Type")]
         public MembershipType MembershipType { get; set; }
 
-        [Display(Name = "Membership Id")]
+        [Display(Name = "Membership Type")]
         public byte MembershipTypeId { get; }
     }
 }

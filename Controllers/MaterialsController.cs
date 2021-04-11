@@ -19,8 +19,19 @@ namespace Eventy.Controllers
         {
             _context.Dispose();
         }
-        // GET: Customers
-        public ViewResult Index()
+
+        public ActionResult New()
+        {
+            var categories = _context.Categories.ToList();
+            var viewModel = new NewMaterialViewModel
+            {
+                Categories = categories
+            };
+
+            return View(viewModel);
+        }
+
+            public ViewResult Index()
         {
             var materials = _context.Materials.Include(m => m.Category).ToList();
 
