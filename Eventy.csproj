@@ -234,6 +234,18 @@
     <Compile Include="Migrations\202104101752052_UpdatedIsAvailableDatatype.Designer.cs">
       <DependentUpon>202104101752052_UpdatedIsAvailableDatatype.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104111454397_UpdatedCustomerClassProperties.cs" />
+    <Compile Include="Migrations\202104111454397_UpdatedCustomerClassProperties.Designer.cs">
+      <DependentUpon>202104111454397_UpdatedCustomerClassProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104111458401_UpdatedMaterialClassProperties.cs" />
+    <Compile Include="Migrations\202104111458401_UpdatedMaterialClassProperties.Designer.cs">
+      <DependentUpon>202104111458401_UpdatedMaterialClassProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104111500542_UpdatedMembershipTypeClassProperties.cs" />
+    <Compile Include="Migrations\202104111500542_UpdatedMembershipTypeClassProperties.Designer.cs">
+      <DependentUpon>202104111500542_UpdatedMembershipTypeClassProperties.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CartItem.cs" />
@@ -314,6 +326,7 @@
     <Content Include="Views\Materials\Index.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Materials\Details.cshtml" />
+    <Content Include="Views\Customers\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -373,6 +386,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104101752052_UpdatedIsAvailableDatatype.resx">
       <DependentUpon>202104101752052_UpdatedIsAvailableDatatype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104111454397_UpdatedCustomerClassProperties.resx">
+      <DependentUpon>202104111454397_UpdatedCustomerClassProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104111458401_UpdatedMaterialClassProperties.resx">
+      <DependentUpon>202104111458401_UpdatedMaterialClassProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104111500542_UpdatedMembershipTypeClassProperties.resx">
+      <DependentUpon>202104111500542_UpdatedMembershipTypeClassProperties.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
