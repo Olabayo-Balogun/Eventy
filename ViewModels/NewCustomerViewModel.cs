@@ -9,6 +9,6 @@ namespace Eventy.ViewModels
     public class NewCustomerViewModel
     {
         public IEnumerable<MembershipType> MembershipTypes { get; set; }
-        public Customer Cu { get; set; }
+        public Customer Customer { get; set; }
     }
 }

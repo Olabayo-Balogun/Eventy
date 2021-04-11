@@ -12,7 +12,6 @@ namespace Eventy.Models
 
         [Required]
         [Display(Name = "Membership Type")]
-
         public string Name { get; set; }
 
         [Required]

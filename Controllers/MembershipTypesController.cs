@@ -11,107 +11,107 @@ using Eventy.Models;
 
 namespace Eventy.Controllers
 {
-    public class CustomersController : Controller
+    public class MembershipTypesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Customers
+        // GET: MembershipTypes
         public async Task<ActionResult> Index()
         {
-            return View(await db.Customers.ToListAsync());
+            return View(await db.MembershipTypes.ToListAsync());
         }
 
-        // GET: Customers/Details/5
+        // GET: MembershipTypes/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = await db.Customers.FindAsync(id);
-            if (customer == null)
+            MembershipType membershipType = await db.MembershipTypes.FindAsync(id);
+            if (membershipType == null)
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            return View(membershipType);
         }
 
-        // GET: Customers/Create
+        // GET: MembershipTypes/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Customers/Create
+        // POST: MembershipTypes/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,FirstName,LastName,DateOfBirth,PhoneNumber,EmailAddress,HomeAddress,IsSubscribedToNewsletter,Image")] Customer customer)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Name,SignUpFee,DurationInMonths,DiscountRate")] MembershipType membershipType)
         {
             if (ModelState.IsValid)
             {
-                db.Customers.Add(customer);
+                db.MembershipTypes.Add(membershipType);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(customer);
+            return View(membershipType);
         }
 
-        // GET: Customers/Edit/5
+        // GET: MembershipTypes/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = await db.Customers.FindAsync(id);
-            if (customer == null)
+            MembershipType membershipType = await db.MembershipTypes.FindAsync(id);
+            if (membershipType == null)
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            return View(membershipType);
         }
 
-        // POST: Customers/Edit/5
+        // POST: MembershipTypes/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,FirstName,LastName,DateOfBirth,PhoneNumber,EmailAddress,HomeAddress,IsSubscribedToNewsletter,Image")] Customer customer)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Name,SignUpFee,DurationInMonths,DiscountRate")] MembershipType membershipType)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(customer).State = EntityState.Modified;
+                db.Entry(membershipType).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(customer);
+            return View(membershipType);
         }
 
-        // GET: Customers/Delete/5
+        // GET: MembershipTypes/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = await db.Customers.FindAsync(id);
-            if (customer == null)
+            MembershipType membershipType = await db.MembershipTypes.FindAsync(id);
+            if (membershipType == null)
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            return View(membershipType);
         }
 
-        // POST: Customers/Delete/5
+        // POST: MembershipTypes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Customer customer = await db.Customers.FindAsync(id);
-            db.Customers.Remove(customer);
+            MembershipType membershipType = await db.MembershipTypes.FindAsync(id);
+            db.MembershipTypes.Remove(membershipType);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
