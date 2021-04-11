@@ -11,7 +11,10 @@ namespace Eventy.Models
         [Key]
         public int TransactionId { get; private set; }
         public Customer Customer { get; set; }
-        public int CustomerId { get; set; }
+        public int CustomerId { get; }
+
+        [Required]
+        [Display(Name = "Renting Date")]
         public DateTime DateOfRental { 
             get 
             { 
@@ -19,14 +22,22 @@ namespace Eventy.Models
             } 
         }
         [Required]
+        [Display(Name = "Return Date")]
         public DateTime DateOfReturn { get; set; }
+
+        [Display(Name = "Number of renting days")]
         public int NumberOfRentalDays { 
             get 
             {
                 return (DateOfReturn - DateOfRental).Days; 
             } 
         }
+
+        [Required]
+        [Display(Name = "Quantity")]
         public int QuantityRequested { get; set; }
+
+        [Display(Name = "Price")]
         public decimal TotalPricePerMaterial
         {
             get

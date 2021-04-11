@@ -24,6 +24,8 @@ namespace Eventy.Models
         public DbSet<Material> Materials { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<MembershipType> MembershipTypes { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
