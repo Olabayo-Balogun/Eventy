@@ -273,7 +273,6 @@
     <Compile Include="ViewModels\MembershipTypeViewModel.cs" />
     <Compile Include="ViewModels\NewCustomerViewModel.cs" />
     <Compile Include="ViewModels\NewMaterialViewModel.cs" />
-    <Compile Include="ViewModels\RandomMaterialViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-litera.css" />
