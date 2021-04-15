@@ -37,26 +37,34 @@ namespace Eventy.Controllers
         }
 
         // GET: MembershipTypes/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
 
         // POST: MembershipTypes/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Name,SignUpFee,DurationInMonths,DiscountRate")] MembershipType membershipType)
-        {
-            if (ModelState.IsValid)
-            {
-                db.MembershipTypes.Add(membershipType);
-                await db.SaveChangesAsync();
-                return RedirectToAction("Index");
-            }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<ActionResult> Create([Bind(Include = "Id,Name,SignUpFee,DurationInMonths,DiscountRate")] MembershipType membershipType)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.MembershipTypes.Add(membershipType);
+        //        await db.SaveChangesAsync();
+        //        return RedirectToAction("Index");
+        //    }
 
-            return View(membershipType);
+        //    return View(membershipType);
+        //}
+        [HttpPost]
+        public ActionResult Create(MembershipType membershipType)
+        {
+            db.MembershipTypes.Add(membershipType);
+            db.SaveChanges();
+
+            return RedirectToAction("Index", "MembershipTypes");
         }
 
         // GET: MembershipTypes/Edit/5

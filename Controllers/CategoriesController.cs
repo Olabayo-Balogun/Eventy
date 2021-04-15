@@ -37,26 +37,34 @@ namespace Eventy.Controllers
         }
 
         // GET: Categories/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
 
         // POST: Categories/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Name")] Category category)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Categories.Add(category);
-                await db.SaveChangesAsync();
-                return RedirectToAction("Index");
-            }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<ActionResult> Create([Bind(Include = "Id,Name")] Category category)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Categories.Add(category);
+        //        await db.SaveChangesAsync();
+        //        return RedirectToAction("Index");
+        //    }
 
-            return View(category);
+        //    return View(category);
+        //}
+        [HttpPost]
+        public ActionResult Create(Category category)
+        {
+            db.Categories.Add(category);
+            db.SaveChanges();
+
+            return RedirectToAction("Index", "Categories");
         }
 
         // GET: Categories/Edit/5

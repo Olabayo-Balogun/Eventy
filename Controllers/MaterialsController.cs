@@ -38,28 +38,37 @@ namespace Eventy.Controllers
         }
 
         // GET: Materials/Create
-        public ActionResult Create()
-        {
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name");
-            return View();
-        }
+        //public ActionResult Create()
+        //{
+        //    ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name");
+        //    return View();
+        //}
 
         // POST: Materials/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Name,DateAdded,PricePerDay,Quantity,Image,IsAvailable,CategoryId")] Material material)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Materials.Add(material);
-                await db.SaveChangesAsync();
-                return RedirectToAction("Index");
-            }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<ActionResult> Create([Bind(Include = "Id,Name,DateAdded,PricePerDay,Quantity,Image,IsAvailable,CategoryId")] Material material)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Materials.Add(material);
+        //        await db.SaveChangesAsync();
+        //        return RedirectToAction("Index");
+        //    }
 
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", material.CategoryId);
-            return View(material);
+        //    ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", material.CategoryId);
+        //    return View(material);
+        //}
+
+        [HttpPost]
+        public ActionResult Create(Material material)
+        {
+            db.Materials.Add(material);
+            db.SaveChanges();
+
+            return RedirectToAction("Index", "Materials");
         }
 
         // GET: Materials/Edit/5

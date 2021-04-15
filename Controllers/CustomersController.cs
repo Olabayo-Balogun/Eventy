@@ -37,26 +37,35 @@ namespace Eventy.Controllers
         }
 
         // GET: Customers/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
 
         // POST: Customers/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,FirstName,LastName,DateOfBirth,PhoneNumber,EmailAddress,HomeAddress,IsSubscribedToNewsletter,Image")] Customer customer)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Customers.Add(customer);
-                await db.SaveChangesAsync();
-                return RedirectToAction("Index");
-            }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<ActionResult> Create([Bind(Include = "Id,FirstName,LastName,DateOfBirth,PhoneNumber,EmailAddress,HomeAddress,IsSubscribedToNewsletter,Image")] Customer customer)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Customers.Add(customer);
+        //        await db.SaveChangesAsync();
+        //        return RedirectToAction("Index");
+        //    }
 
-            return View(customer);
+        //    return View(customer);
+        //}
+
+        [HttpPost]
+        public ActionResult Create(Customer customer)
+        {
+            db.Customers.Add(customer);
+            db.SaveChanges();
+
+            return RedirectToAction("Index", "Customers");
         }
 
         // GET: Customers/Edit/5
