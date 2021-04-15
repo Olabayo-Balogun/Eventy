@@ -1,8 +1,7 @@
 namespace Eventy.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class InitialMigration : DbMigration
     {
         public override void Up()
@@ -15,7 +14,7 @@ namespace Eventy.Migrations
             AddColumn("dbo.Customers", "HomeAddress", c => c.String());
             DropColumn("dbo.Customers", "Name");
         }
-        
+
         public override void Down()
         {
             AddColumn("dbo.Customers", "Name", c => c.String());

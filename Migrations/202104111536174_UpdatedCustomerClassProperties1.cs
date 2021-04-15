@@ -1,8 +1,7 @@
 namespace Eventy.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class UpdatedCustomerClassProperties1 : DbMigration
     {
         public override void Up()
@@ -16,7 +15,7 @@ namespace Eventy.Migrations
             CreateIndex("dbo.Customers", "MembershipType_Id");
             AddForeignKey("dbo.Customers", "MembershipType_Id", "dbo.MembershipTypes", "Id", cascadeDelete: true);
         }
-        
+
         public override void Down()
         {
             DropForeignKey("dbo.Customers", "MembershipType_Id", "dbo.MembershipTypes");

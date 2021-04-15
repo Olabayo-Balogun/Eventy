@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace Eventy.Models
 {
@@ -11,8 +8,8 @@ namespace Eventy.Models
         public int Id { get; private set; }
 
         [Required]
-        [StringLength (50)]
-        [Display (Name = "First Name")]
+        [StringLength(50)]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required]
@@ -25,10 +22,10 @@ namespace Eventy.Models
 
         [Required]
         [Display(Name = "Date Of Birth")]
-        public DateTime DateOfBirth { get ; set; }
+        public DateTime DateOfBirth { get; set; }
 
         [Display(Name = "Age")]
-        public int Age { get { return ((DateTime.Today - DateOfBirth).Days)/365; } }
+        public int Age { get { return ((DateTime.Today - DateOfBirth).Days) / 365; } }
 
         [Required]
         [StringLength(11)]

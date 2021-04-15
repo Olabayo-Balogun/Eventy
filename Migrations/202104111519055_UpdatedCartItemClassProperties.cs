@@ -1,8 +1,7 @@
 namespace Eventy.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class UpdatedCartItemClassProperties : DbMigration
     {
         public override void Up()
@@ -14,7 +13,7 @@ namespace Eventy.Migrations
             CreateIndex("dbo.CartItems", "Customer_Id");
             AddForeignKey("dbo.CartItems", "Customer_Id", "dbo.Customers", "Id");
         }
-        
+
         public override void Down()
         {
             DropForeignKey("dbo.CartItems", "Customer_Id", "dbo.Customers");

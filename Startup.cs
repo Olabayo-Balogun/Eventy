@@ -2,6 +2,7 @@
 using Owin;
 
 [assembly: OwinStartupAttribute(typeof(Eventy.Startup))]
+
 namespace Eventy
 {
     public partial class Startup

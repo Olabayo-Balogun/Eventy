@@ -1,8 +1,7 @@
 namespace Eventy.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class AddMembershipTypeAndCart : DbMigration
     {
         public override void Up()
@@ -10,14 +9,14 @@ namespace Eventy.Migrations
             CreateTable(
                 "dbo.MembershipTypes",
                 c => new
-                    {
-                        Id = c.Byte(nullable: false),
-                        SignUpFee = c.Short(nullable: false),
-                        DurationInMonths = c.Byte(nullable: false),
-                        DiscountRate = c.Byte(nullable: false),
-                    })
+                {
+                    Id = c.Byte(nullable: false),
+                    SignUpFee = c.Short(nullable: false),
+                    DurationInMonths = c.Byte(nullable: false),
+                    DiscountRate = c.Byte(nullable: false),
+                })
                 .PrimaryKey(t => t.Id);
-            
+
             AddColumn("dbo.Customers", "DateOfBirth", c => c.DateTime(nullable: false));
             AddColumn("dbo.Customers", "Image", c => c.String());
             AddColumn("dbo.Customers", "MembershipType_Id", c => c.Byte());
@@ -25,7 +24,7 @@ namespace Eventy.Migrations
             AddForeignKey("dbo.Customers", "MembershipType_Id", "dbo.MembershipTypes", "Id");
             DropColumn("dbo.Customers", "Age");
         }
-        
+
         public override void Down()
         {
             AddColumn("dbo.Customers", "Age", c => c.Int(nullable: false));

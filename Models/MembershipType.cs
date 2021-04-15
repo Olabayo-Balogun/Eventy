@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Eventy.Models
 {
@@ -25,6 +21,5 @@ namespace Eventy.Models
         [Required]
         [Display(Name = "Discount Rate (%)")]
         public byte DiscountRate { get; set; }
-
     }
 }
